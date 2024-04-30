@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather app</title>
+    <style>
+        #myUL {
+            /* Remove default list styling */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        body {
+            padding-left: 20%;
+            padding-right: 15%;
+        }
+        h1 {
+            padding-left: 27%;
+        }
+        #myUL li a {
+            border: 1px solid #ddd;
+            /* Add a border to all links */
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #f6f6f6;
+            /* Grey background color */
+            padding: 12px;
+            /* Add some padding */
+            text-decoration: none;
+            /* Remove default text underline */
+            font-size: 18px;
+            /* Increase the font-size */
+            color: black;
+            /* Add a black text color */
+            display: block;
+            /* Make it into a block element to fill the whole list */
+        }
+    
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+            /* Add a hover effect to all links, except for headers */
+        }
+    </style>
+</head>
+<body>
+    <h2 id="dis">place holder</h2>
+    <h1>Useless weather site dot com™️</h1>
+    <script src="./apirequest.js"></script>
+    <p>Search for the weather qualities</p>
+    <input type="text" name="" id="searc" onkeyup="weatherparser()" placeholder="Search for weather aspect..">
+    <p id="weater"></p>
+    <ul id="myUL">
+        <li><a onclick="weatherdata('feelslike_f')">temperature fahrenheit</a></li>
+        <li><a onclick="weatherdata('feelslike_c')">temperature celcius</a></li>
+        <li><a onclick="weatherdata('humidity')">humidity</a></li>
+        <li><a onclick="weatherdata('wind_mph')">wind ('MERICA)</a></li>
+        <li><a onclick="weatherdata('wind_kph')">wind (british 'people')</a></li>
+        <li><a onclick="weatherdata('wind_dir')">where is the wind from ?</a></li>
+    </ul>
+</body>
+</html>
